@@ -7,7 +7,7 @@ combination with Next.js.
 
 ### Prerequisites
 
-- Node.js
+- [Node.js](https://nodejs.org/en/download)
 
 ### Installation
 
