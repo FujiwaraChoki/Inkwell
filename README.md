@@ -1,38 +1,29 @@
-<p align="center"><img src="https://i.imgur.com/flcMvDC.png"></p>
+# Inkwell
 
-## Usage
+Inkwell is a text editor written in TypeScript. It's a desktop application using the Electron framework in
+combination with Next.js.
 
-### Create an App
+## Getting started
 
-```
-# with npx
-$ npx create-nextron-app my-app --example with-material-ui
+### Prerequisites
 
-# with yarn
-$ yarn create nextron-app my-app --example with-material-ui
+- Node.js
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-material-ui
-```
+### Installation
 
-### Install Dependencies
+1. Clone the repo
+   ```bash
+   git clone https://github.com/FujiwaraChoki/inkwell.git
+   ```
+2. Install NPM packages
+   ```bash
+    npm install
+    ```
+3. Run the app
+    ```bash
+    npm run dev
+    ```
 
-```
-$ cd my-app
+## License
 
-# using yarn or npm
-$ yarn (or `npm install`)
-
-# using pnpm
-$ pnpm install --shamefully-hoist
-```
-
-### Use it
-
-```
-# development mode
-$ yarn dev (or `npm run dev` or `pnpm run dev`)
-
-# production build
-$ yarn build (or `npm run build` or `pnpm run build`)
-```
+Distributed under the MIT License. See the [LICENSE](LICENSE.md) file for more information.
