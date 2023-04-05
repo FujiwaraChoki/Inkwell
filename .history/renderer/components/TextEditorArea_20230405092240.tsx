@@ -53,8 +53,9 @@ const TextEditorArea = ({ path, content }) => {
         <Box
             component="form"
             sx={{
-                '& .MuiTextField-root': { width: '130ch' },
+                '& .MuiTextField-root': { m: 1, width: '150ch' },
                 fontFamily: font,
+                margin: '20rem',
                 position: "absolute"
             }}
             noValidate

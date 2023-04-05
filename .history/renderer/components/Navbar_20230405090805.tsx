@@ -167,6 +167,7 @@ export default function PrimarySearchAppBar() {
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
+      // Set font
       sx={{ fontFamily: font }}
     >
       <MenuItem>
@@ -209,10 +210,7 @@ export default function PrimarySearchAppBar() {
   };
 
   return (
-    <Box sx={{
-      flexGrow: 1,
-      fontFamily: font,
-    }}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton

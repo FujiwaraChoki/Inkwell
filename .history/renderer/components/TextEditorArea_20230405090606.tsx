@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Box, Alert, AlertTitle, Snackbar } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import fs from 'fs';
-import FontContext from '../contexts/font';
 
 const TextEditorArea = ({ path, content }) => {
     const [text, setText] = useState(content);
@@ -10,7 +9,6 @@ const TextEditorArea = ({ path, content }) => {
         success: null,
         message: '',
     });
-    const { font } = useContext(FontContext);
 
     const handleChange = (e: any) => {
         setText(e.target?.value);
@@ -42,6 +40,8 @@ const TextEditorArea = ({ path, content }) => {
         };
 
         document.addEventListener('keydown', handleSaveFile);
+        const body = document.querySelector('body');
+        body.style.overflowX = 'hidden';
 
         // Clean up the event listener when the component unmounts
         return () => {
@@ -53,9 +53,7 @@ const TextEditorArea = ({ path, content }) => {
         <Box
             component="form"
             sx={{
-                '& .MuiTextField-root': { width: '130ch' },
-                fontFamily: font,
-                position: "absolute"
+                '& .MuiTextField-root': { m: 1, width: '150ch' },
             }}
             noValidate
             autoComplete="off"
@@ -65,22 +63,12 @@ const TextEditorArea = ({ path, content }) => {
                     id="outlined-multiline-static"
                     label={path}
                     multiline
-                    rows={20}
+                    rows={30}
                     variant="outlined"
                     value={text}
                     onChange={(e) => handleChange(e)}
-                    sx={{
-                        '& .MuiOutlinedInput-root': {
-                            '& fieldset': {
-                                borderColor: 'white',
-                            },
-                            '&:hover fieldset': {
-                                borderColor: 'white',
-                            },
-                            '&.Mui-focused fieldset': {
-                                borderColor: 'white',
-                            },
-                        },
+                    style={{
+                        marginTop: '-130x'
                     }}
                 />
             </div>

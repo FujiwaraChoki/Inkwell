@@ -53,9 +53,9 @@ const TextEditorArea = ({ path, content }) => {
         <Box
             component="form"
             sx={{
-                '& .MuiTextField-root': { width: '130ch' },
+                '& .MuiTextField-root': { m: 1, width: '150ch' },
                 fontFamily: font,
-                position: "absolute"
+                padding: '1rem',
             }}
             noValidate
             autoComplete="off"
@@ -65,22 +65,12 @@ const TextEditorArea = ({ path, content }) => {
                     id="outlined-multiline-static"
                     label={path}
                     multiline
-                    rows={20}
+                    rows={30}
                     variant="outlined"
                     value={text}
                     onChange={(e) => handleChange(e)}
-                    sx={{
-                        '& .MuiOutlinedInput-root': {
-                            '& fieldset': {
-                                borderColor: 'white',
-                            },
-                            '&:hover fieldset': {
-                                borderColor: 'white',
-                            },
-                            '&.Mui-focused fieldset': {
-                                borderColor: 'white',
-                            },
-                        },
+                    style={{
+                        marginTop: '-130x'
                     }}
                 />
             </div>

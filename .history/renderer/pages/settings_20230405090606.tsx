@@ -15,10 +15,9 @@ const CustomSlider = ({ label, min, max, value, onChange }: SliderProps) => {
     const handleChange = (event: any, value: number | number[]) => {
         onChange(value as number);
     };
-    const { font, setFont } = useContext(FontContext);
 
     return (
-        <Box sx={{ width: '80%', margin: '2rem auto', fontFamily: font }}>
+        <Box sx={{ width: '80%', margin: '2rem auto' }}>
             <Typography gutterBottom variant="h6">
                 {label}
             </Typography>
@@ -76,7 +75,7 @@ const Settings = () => {
     ];
 
     return (
-        <Box sx={{ padding: '2rem', fontFamily: font }}>
+        <Box sx={{ padding: '2rem' }}>
             <Typography variant="h4" gutterBottom>
                 Settings
             </Typography>

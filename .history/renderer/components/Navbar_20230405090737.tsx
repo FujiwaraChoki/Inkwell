@@ -167,7 +167,6 @@ export default function PrimarySearchAppBar() {
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-      sx={{ fontFamily: font }}
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
@@ -209,10 +208,7 @@ export default function PrimarySearchAppBar() {
   };
 
   return (
-    <Box sx={{
-      flexGrow: 1,
-      fontFamily: font,
-    }}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton

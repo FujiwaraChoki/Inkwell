@@ -19,7 +19,6 @@ import FileChooserContext from '../contexts/fileChooserContext';
 import FolderChooserContext from '../contexts/folderChooserContext';
 import Link from './Link';
 import { useRouter } from 'next/router';
-import FontContext from '../contexts/font';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -69,7 +68,6 @@ export default function PrimarySearchAppBar() {
 
   const { fileChooser, setFileChooser } = React.useContext(FileChooserContext);
   const { folderChooser, setFolderChooser } = React.useContext(FolderChooserContext);
-  const { font, setFont } = React.useContext(FontContext);
 
   const isMenuOpen = Boolean(anchorEl);
   const isProfileMenuOpen = Boolean(profileAnchorEl);
@@ -167,7 +165,6 @@ export default function PrimarySearchAppBar() {
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-      sx={{ fontFamily: font }}
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
@@ -209,10 +206,7 @@ export default function PrimarySearchAppBar() {
   };
 
   return (
-    <Box sx={{
-      flexGrow: 1,
-      fontFamily: font,
-    }}>
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton

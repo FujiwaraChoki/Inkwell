@@ -76,7 +76,7 @@ const Settings = () => {
     ];
 
     return (
-        <Box sx={{ padding: '2rem', fontFamily: font }}>
+        <Box sx={{ padding: '2rem' }}>
             <Typography variant="h4" gutterBottom>
                 Settings
             </Typography>
