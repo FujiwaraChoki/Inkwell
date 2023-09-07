@@ -37,7 +37,6 @@ const Home = () => {
         if (typeof window === 'undefined') return;
         const input = document.createElement('input');
         input.type = 'file';
-        // Accept only text files
         input.accept = '.txt';
         input.onchange = (event: any) => {
             const selectedFile = event.target.files[0];
@@ -106,6 +105,8 @@ const Home = () => {
             setFile(null);
         }
     }, [folder]);
+
+    console.log(content)
 
     return (
         <>
