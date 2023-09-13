@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "inkwell",
-  "description": "A text editor made with Next.js, Electorn and TailwindCSS.",
+  "name": "my-nextron-app",
+  "description": "My application description",
   "version": "1.0.0",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
   "main": "app/background.js",
