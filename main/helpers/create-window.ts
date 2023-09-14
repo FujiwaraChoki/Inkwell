@@ -79,7 +79,7 @@ export default (windowName: string, options: BrowserWindowConstructorOptions): B
   win = new BrowserWindow(browserOptions);
 
   // Remove menu bar
-  win.setMenuBarVisibility(false);
+  win.setMenuBarVisibility(true);
 
   win.on('close', saveState);
 

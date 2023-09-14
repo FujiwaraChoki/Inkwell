@@ -4,7 +4,6 @@ import FolderChooserContext from '../contexts/folderChooserContext';
 import fs from 'fs';
 import TextEditorArea from '../components/TextEditorArea';
 import path from 'path';
-import { useRouter } from 'next/router';
 import { useContext, useState, useEffect } from 'react';
 import { List, ListItem, ListItemText } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -37,7 +36,8 @@ const Home = () => {
         if (typeof window === 'undefined') return;
         const input = document.createElement('input');
         input.type = 'file';
-        input.accept = '.txt';
+        // Accept all files
+        input.accept = '*/*';
         input.onchange = (event: any) => {
             const selectedFile = event.target.files[0];
             setFile(selectedFile);
@@ -77,7 +77,14 @@ const Home = () => {
                 console.log(err);
                 return;
             }
+
+            if (data === '') {
+                setContent(' ');
+                return;
+            }
+
             setContent(data);
+            return;
         });
     };
 
@@ -106,14 +113,12 @@ const Home = () => {
         }
     }, [folder]);
 
-    console.log(content)
-
     return (
         <>
-            <div className={styles.container}>
+            <div>
                 {
                     content && (
-                        <TextEditorArea path={file.path} content={content} />
+                        <TextEditorArea path={file.path} content={content} setContent={setContent} />
                     )
                 }
                 {
@@ -136,16 +141,23 @@ const Home = () => {
                 }
                 {
                     !content && !folder && (
-                        <div className={styles.center}>
-                            <h1 className={styles.title}>
-                                Welcome to Inkwell!
-                            </h1>
+                        <div style={{
+                            width: "100vw",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}>
+                            <div className={styles.center}>
+                                <h1 className={styles.title}>
+                                    Welcome to Inkwell!
+                                </h1>
 
-                            <p className={styles.description}>
-                                Get started by <span className={styles.code} onClick={() => {
-                                    setFileChooser(true);
-                                }}>opening a file</span>
-                            </p>
+                                <p className={styles.description}>
+                                    Get started by <span className={styles.code} onClick={() => {
+                                        setFileChooser(true);
+                                    }}>opening a file</span>
+                                </p>
+                            </div>
                         </div>
                     )
                 }

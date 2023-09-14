@@ -8,6 +8,10 @@ import createEmotionCache from '../lib/create-emotion-cache';
 import { CacheProvider } from '@emotion/react';
 import Navbar from '../components/Navbar';
 
+// Prismjs
+import 'prismjs/themes/prism.css';
+import Prism from "prismjs";
+
 // Contexts
 import FileChooserContext from '../contexts/fileChooserContext';
 import FolderChooserContext from '../contexts/folderChooserContext';
