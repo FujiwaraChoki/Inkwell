@@ -82,6 +82,15 @@ async function runC(code: string) {
     return output;
 }
 
+async function runJavaScript(code: string) {
+    const file = writeCodeToFile(code, 'js');
+    const output = await executeCommand(`node ${file}`).then((output) => {
+        return output;
+    });
+
+    return output;
+}
+
 async function runCpp(code: string) {
     const file = writeCodeToFile(code, 'cpp');
     exec(`g++ ${file}`);
@@ -94,20 +103,20 @@ async function runCpp(code: string) {
 
 async function runCode(code: string, language: string): Promise<string> {
     if (language === 'javascript') {
-        const result: string = await eval(code);
+        const result: any = await runJavaScript(code);
         return result;
     } else if (language === 'python') {
         const result: any = await runPython(code);
         return result.trim();
     } else if (language === 'java') {
         const result: any = await runJava(code);
-        return result;
+        return result.trim();
     } else if (language === 'c') {
         const result: any = await runC(code);
-        return result;
+        return result.trim();
     } else if (language === 'cpp') {
         const result: any = await runCpp(code);
-        return result;
+        return result.trim();
     } else {
         return 'Language not yet supported';
     }
