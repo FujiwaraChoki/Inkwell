@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "my-nextron-app",
+  "name": "inkwell",
   "description": "A simplified code editor with syntax highlighting and built-in code runners.",
   "version": "1.0.0",
   "author": "Sami Hindi <sami@samihindi.com>",
