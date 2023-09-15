@@ -1,6 +1,6 @@
-appId: com.example.nextron
-productName: My Nextron App
-copyright: Copyright © 2018 Yoshihide Shiono
+appId: com.samihindi.inkwell
+productName: Inkwell
+copyright: Copyright © 2023 Sami Hindi
 directories:
   output: dist
   buildResources: resources
