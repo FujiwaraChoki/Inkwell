@@ -1,9 +1,9 @@
 {
   "private": true,
   "name": "my-nextron-app",
-  "description": "My application description",
+  "description": "A simplified code editor with syntax highlighting and built-in code runners.",
   "version": "1.0.0",
-  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "author": "Sami Hindi <sami@samihindi.com>",
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
